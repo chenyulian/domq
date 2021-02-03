@@ -1,4 +1,4 @@
-window.domq = function (selectorOrArray) {
+window.$ = window.domq = function (selectorOrArray) {
   let elements;
   if (typeof selectorOrArray === "string") {
     elements = document.querySelectorAll(selectorOrArray);
