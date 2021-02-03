@@ -34,10 +34,24 @@ window.$ = window.domq = function (selectorOrArray) {
       }
     },
     parent() {
-      // to do
+      let array = [];
+      for (let i = 0; i < elements.length; i++) {
+        if (array.indexOf(elements[i].parentNode) < 0) {
+          array.push(elements[i].parentNode);
+        }
+      }
+      return domq(array);
     },
     children() {
-      // to do
+      let array = [];
+      for (let i = 0; i < elements.length; i++) {
+        let children = elements[i].children;
+        array.push(...children);
+      }
+      return domq(array);
+    },
+    print() {
+      console.log(elements);
     },
   };
 };
